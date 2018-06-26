@@ -5,6 +5,13 @@
     "keywords": ["nfe","nfce","sped","nfephp"],
     "homepage": "https://github.com/nfephp-org/sped-nfe",
     "license": ["LGPL-3.0-or-later", "GPL-3.0-or-later", "MIT"],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/fmaraujo/sped-common.git",
+            "reference": "master"
+        }
+    ],
     "authors": [
         {
             "name": "Roberto L. Machado",
@@ -19,7 +26,7 @@
     ],
     "require": {
         "php" : ">= 5.6",
-        "nfephp-org/sped-common" : "^5.0",
+        "nfephp-org/sped-common" : "dev-master",
         "justinrainbow/json-schema": "^5.2"
     },
     "require-dev": {
