@@ -17,6 +17,13 @@
             "homepage": "https://github.com/nfephp-org/sped-nfe/graphs/contributors"
         }
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/fmaraujo/sped-common.git",
+            "reference": "master"
+        }
+    ],
     "require": {
         "php" : ">= 5.6",
         "fmaraujo/sped-common" : "dev-master",
