@@ -49,5 +49,5 @@
             "v5.0": "5.0-dev"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
