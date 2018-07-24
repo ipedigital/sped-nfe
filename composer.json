@@ -19,6 +19,7 @@
     ],
     "require": {
         "php" : ">= 5.6",
+        "nfephp-org/sped-gtin": "^1.0",
         "justinrainbow/json-schema": "^5.2"
     },
     "require-dev": {
@@ -48,5 +49,5 @@
             "v5.0": "5.0-dev"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
