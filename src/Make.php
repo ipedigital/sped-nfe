@@ -7019,7 +7019,7 @@ class Make
                 $this->dom->appChild($det, $child, "Inclusão do node imposto");
             }
             //insere impostoDevol
-            if (!empty($this->aImpostoDevol)) {
+            if (!empty($this->aImpostoDevol[$nItem])) {
                 $child = $this->aImpostoDevol[$nItem];
                 $this->dom->appChild($det, $child, "Inclusão do node impostoDevol");
             }
