@@ -199,6 +199,19 @@
       <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="200">http://nfce.sefaz.pe.gov.br/nfce-web/consultarNFCe</NfeConsultaQR>
     </producao>
   </UF>
+    <UF>
+        <sigla>PI</sigla>
+        <homologacao>
+            <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">
+                http://www.sefaz.pi.gov.br/nfce/qrcode
+            </NfeConsultaQR>
+        </homologacao>
+        <producao>
+            <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">
+                http://www.sefaz.pi.gov.br/nfce/qrcode
+            </NfeConsultaQR>
+        </producao>
+    </UF>
   <UF>
     <sigla>PR</sigla>
     <homologacao>
