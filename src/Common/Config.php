@@ -25,7 +25,7 @@ class Config
     /**
      * Validate method
      * @param string $content config.json
-     * @return boolean
+     * @return \stdClass
      */
     public static function validate($content)
     {
