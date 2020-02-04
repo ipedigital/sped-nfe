@@ -816,7 +816,7 @@ class Tools extends ToolsCommon
         //return $request;
         $parameters = ['nfeDadosMsg' => $request];
         $body = "<nfeDadosMsg xmlns=\"$this->urlNamespace\">$request</nfeDadosMsg>";
-        $this->lastResponse = $this->sendRequest($body, $parameters);
+        $this->lastResponse = $this->sendRequest($body, $parameters, ($uf == 'CE' && $this->modelo == 65));
         return $this->lastResponse;
     }
 

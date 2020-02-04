@@ -507,12 +507,22 @@ class Tools
      * @return string
      * @throws RuntimeException
      */
-    protected function sendRequest($request, array $parameters = [])
+    protected function sendRequest($request, array $parameters = [], $returnEnvelope = false)
     {
         if (in_array($this->contingency->tpEmis, [Contingency::TPEMIS_FSDA, Contingency::TPEMIS_OFFLINE])) {
             throw new \RuntimeException('Em contingencia FSDA ou OFFLINE não é possivel acessar os webservices.');
         }
         $this->checkSoap();
+
+        if ($returnEnvelope) {
+            return $this->soap->makeEnvelopeSoap(
+                $request,
+                $this->soapnamespaces,
+                SOAP_1_2,
+                $this->objHeader
+            );
+        }
+
         return (string) $this->soap->send(
             $this->urlService,
             $this->urlMethod,
