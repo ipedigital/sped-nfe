@@ -26,7 +26,7 @@ class ContingencyNFe
         $dom->preserveWhiteSpace = false;
         $dom->formatOutput = false;
         $dom->loadXML($xml);
-        
+
         $ide = $dom->getElementsByTagName('ide')->item(0);
         $cUF = $ide->getElementsByTagName('cUF')->item(0)->nodeValue;
         $cNF = $ide->getElementsByTagName('cNF')->item(0)->nodeValue;
@@ -39,26 +39,39 @@ class ContingencyNFe
         $tpEmis = (string) $contingency->tpEmis;
         $emit = $dom->getElementsByTagName('emit')->item(0);
         $cnpj = $emit->getElementsByTagName('CNPJ')->item(0)->nodeValue;
-        
+
         $motivo = trim(Strings::replaceUnacceptableCharacters($contingency->motive));
         $dt = new DateTime();
         $dt->setTimestamp($contingency->timestamp);
         $ide->getElementsByTagName('tpEmis')
             ->item(0)
             ->nodeValue = $contingency->tpEmis;
+
+        $NFRef = $ide->getElementsByTagName('NFref')->item(0);
+
         if (!empty($ide->getElementsByTagName('dhCont')->item(0)->nodeValue)) {
             $ide->getElementsByTagName('dhCont')
                 ->item(0)
                 ->nodeValue = $dt->format('Y-m-d\TH:i:sP');
         } else {
             $dhCont = $dom->createElement('dhCont', $dt->format('Y-m-d\TH:i:sP'));
-            $ide->appendChild($dhCont);
+            if ($NFRef) {
+                $ide->insertBefore($dhCont, $NFRef);
+            }
+            else {
+                $ide->appendChild($dhCont);
+            }
         }
         if (!empty($ide->getElementsByTagName('xJust')->item(0)->nodeValue)) {
             $ide->getElementsByTagName('xJust')->item(0)->nodeValue = $motivo;
         } else {
             $xJust = $dom->createElement('xJust', $motivo);
-            $ide->appendChild($xJust);
+            if ($NFRef) {
+                $ide->insertBefore($xJust, $NFRef);
+            }
+            else {
+                $ide->appendChild($xJust);
+            }
         }
         //corrigir a chave
         $infNFe = $dom->getElementsByTagName('infNFe')->item(0);
@@ -75,6 +88,7 @@ class ContingencyNFe
         );
         $ide->getElementsByTagName('cDV')->item(0)->nodeValue = substr($chave, -1);
         $infNFe->setAttribute('Id', 'NFe'.$chave);
+
         return Strings::clearXmlString($dom->saveXML(), true);
     }
 }
