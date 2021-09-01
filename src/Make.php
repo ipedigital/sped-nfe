@@ -6274,6 +6274,7 @@ class Make
         $possible = [
             'indPag',
             'tPag',
+            'xPag',
             'vPag',
             'CNPJ',
             'tBand',
@@ -6296,6 +6297,13 @@ class Make
             $std->tPag,
             true,
             "Forma de pagamento"
+        );
+        $this->dom->addChild(
+            $detPag,
+            "xPag",
+            !empty($std->xPag) ? $std->xPag : null,
+            false,
+            "Descricao da Forma de pagamento"
         );
         $this->dom->addChild(
             $detPag,
