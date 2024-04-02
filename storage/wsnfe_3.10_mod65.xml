@@ -108,7 +108,7 @@
     </producao>
   </UF>
   <UF>
-    <!-- NOTA: ES usa o SVRS -->  
+    <!-- NOTA: ES usa o SVRS -->
     <sigla>ES</sigla>
     <homologacao>
       <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">http://homologacao.sefaz.es.gov.br/ConsultaNFCe/qrcode.aspx</NfeConsultaQR>
@@ -116,7 +116,7 @@
     <producao>
       <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">http://app.sefaz.es.gov.br/ConsultaNFCe/qrcode.aspx</NfeConsultaQR>
     </producao>
-  </UF>  
+  </UF>
   <UF>
     <sigla>GO</sigla>
     <homologacao>
@@ -189,10 +189,10 @@
   <UF>
     <sigla>PB</sigla>
     <homologacao>
-      <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">http://www.receita.pb.gov.br/nfcehom</NfeConsultaQR>
+      <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">http://www.sefaz.pb.gov.br/nfcehom</NfeConsultaQR>
     </homologacao>
     <producao>
-      <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">http://www.receita.pb.gov.br/nfce</NfeConsultaQR>
+      <NfeConsultaQR method="QR-CODE" operation="NfeConsultaQR" version="100">http://www.sefaz.pb.gov.br/nfce</NfeConsultaQR>
     </producao>
   </UF>
   <UF>
